@@ -3,88 +3,88 @@ import heroPerson from "../assets/images/png-persona.png";
 
 const people = [
     {
-        name: "Jhon Smith",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad Nacional de Ingenieria",
+        player: "Player 1",
+        name: "Nadim Alvarez",
+        company: "Huawei Peru",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Jhon Smith",
+        alt: "Participante destacado: Nadim Alvarez",
     },
     {
-        name: "Maria Torres",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad de Lima",
+        player: "Player 2",
+        name: "Abigail Kauf",
+        company: "UTN Argentina",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Maria Torres",
+        alt: "Participante destacado: Abigail Kauf",
     },
     {
-        name: "Carlos Rivera",
-        role: "Ingeniero de Sistemas",
-        university: "Pontificia Universidad Catolica del Peru",
+        player: "Player 3",
+        name: "Gera Flores",
+        company: "CENTRUM PUCP",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Carlos Rivera",
+        alt: "Participante destacado: Gera Flores",
     },
     {
-        name: "Ana Mendoza",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad Peruana de Ciencias Aplicadas",
+        player: "Player 4",
+        name: "Diego Vergara",
+        company: "Univ. Católica de Ávila",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Ana Mendoza",
+        alt: "Participante destacado: Diego Vergara",
     },
     {
-        name: "Luis Herrera",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad Nacional Mayor de San Marcos",
+        player: "Player 5",
+        name: "José Verbel",
+        company: "Salati SAS",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Luis Herrera",
+        alt: "Participante destacado: José Verbel",
     },
     {
-        name: "Sofia Ramirez",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad del Pacifico",
+        player: "Player 6",
+        name: "Pablo Fernández",
+        company: "Univ. Católica de Ávila",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Sofia Ramirez",
+        alt: "Participante destacado: Pablo Fernández",
     },
     {
-        name: "Diego Castillo",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad ESAN",
+        player: "Player 7",
+        name: "Damián Siré",
+        company: "Google GDE",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Diego Castillo",
+        alt: "Participante destacado: Damián Siré",
     },
     {
-        name: "Valeria Flores",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad de Piura",
+        player: "Player 8",
+        name: "Ciro Rodríguez",
+        company: "UNMSM",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Valeria Flores",
+        alt: "Participante destacado: Ciro Rodríguez",
     },
     {
-        name: "Mateo Vargas",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad San Ignacio de Loyola",
+        player: "Player 9",
+        name: "Jim Dios",
+        company: "Universidad de Lima",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Mateo Vargas",
+        alt: "Participante destacado: Jim Dios",
     },
     {
-        name: "Camila Rojas",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad Cientifica del Sur",
+        player: "Player 10",
+        name: "Jowel Cabrera",
+        company: "Univ. Peruana Los Andes",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Camila Rojas",
+        alt: "Participante destacado: Jowel Cabrera",
     },
     {
-        name: "Andres Silva",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad Ricardo Palma",
+        player: "Player 11",
+        name: "Ivo Yance",
+        company: "Universidad Continental",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Andres Silva",
+        alt: "Participante destacado: Ivo Yance",
     },
     {
-        name: "Lucia Navarro",
-        role: "Ingeniero de Sistemas",
-        university: "Universidad Continental",
+        player: "Player 12",
+        name: "Miguel Garro",
+        company: "Cisco Systems",
         image: heroPerson,
-        alt: "Profesional de ingeniería destacado: Lucia Navarro",
+        alt: "Participante destacado: Miguel Garro",
     },
 ];
 
@@ -105,7 +105,7 @@ const logos = Array.from({ length: 10 }, (_, index) => `Logo ${index + 1}`);
                             aria-hidden={index === 0 ? "false" : "true"}
                         >
                             <div class="hero-person-marker" aria-hidden="true">
-                                <p class="hero-person-marker-name">{person.name}</p>
+                                <p class="hero-person-marker-label">{person.player}</p>
                             </div>
                             <img
                                 class="hero-person-image"
@@ -115,8 +115,8 @@ const logos = Array.from({ length: 10 }, (_, index) => `Logo ${index + 1}`);
                                 alt={person.alt}
                             />
                             <div class="hero-person-info">
-                                <p class="hero-person-role">{person.role}</p>
-                                <p class="hero-person-university">{person.university}</p>
+                                <p class="hero-person-name">{person.name}</p>
+                                <p class="hero-person-company">{person.company}</p>
                             </div>
                         </article>
                     ))
