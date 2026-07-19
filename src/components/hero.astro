@@ -75,6 +75,8 @@ const people = [
         alt: "Profesional de ingeniería destacado: Lucia Navarro",
     },
 ];
+
+const logos = Array.from({ length: 10 }, (_, index) => `Logo ${index + 1}`);
 ---
 
 <section class="hero">
@@ -123,6 +125,16 @@ const people = [
                         />
                     ))
                 }
+            </div>
+        </div>
+
+        <div class="hero-bottom" aria-label="Logos de participantes">
+            <div class="hero-logo-marquee">
+                <div class="hero-logo-track">
+                    {[...logos, ...logos].map((logo) => (
+                        <div class="hero-logo-item" aria-hidden="true">{logo}</div>
+                    ))}
+                </div>
             </div>
         </div>
     </div>

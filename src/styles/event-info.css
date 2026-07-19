@@ -1,0 +1,12 @@
+.event-info {
+    min-height: 32rem;
+    padding: clamp(4rem, 8vw, 7rem) 1.25rem;
+    box-sizing: border-box;
+    font-family: "SF Pro Text", sans-serif;
+}
+
+.event-info-content {
+    width: min(100%, 72rem);
+    min-height: 20rem;
+    margin: 0 auto;
+}

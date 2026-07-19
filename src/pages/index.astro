@@ -2,9 +2,11 @@
 import "../styles/global.css";
 import "../styles/fonts.css";
 import "../styles/hero.css";
+import "../styles/event-info.css";
 import heroSliderScript from "../scripts/hero-slider.js?url";
 import Navbar from "../components/navbar.astro";
 import Hero from "../components/hero.astro";
+import EventInfo from "../components/event-info.astro";
 ---
 
 <html lang="en">
@@ -19,6 +21,7 @@ import Hero from "../components/hero.astro";
 	<body>
 		<Navbar />
 		<Hero />
+		<EventInfo />
 		<script type="module" src={heroSliderScript}></script>
 	</body>
 </html>
