@@ -33,7 +33,7 @@ const people = [
     {
         player: "Player 5",
         name: "José Verbel",
-        company: "Salati SAS",
+        company: "Solati SAS",
         image: heroPerson,
         alt: "Participante destacado: José Verbel",
     },
@@ -88,7 +88,19 @@ const people = [
     },
 ];
 
-const logos = Array.from({ length: 10 }, (_, index) => `Logo ${index + 1}`);
+const logos = [
+    { name: "Huawei", src: "/images/logos/huawei.svg" },
+    { name: "Universidad Tecnológica Nacional", src: "/images/logos/utn.png" },
+    { name: "CENTRUM PUCP", src: "/images/logos/centrum-pucp.svg" },
+    { name: "Universidad Católica de Ávila", src: "/images/logos/ucavila.png" },
+    { name: "Solati SAS", src: "/images/logos/solati.png" },
+    { name: "Google Developers", src: "/images/logos/google-developers.svg" },
+    { name: "Universidad Nacional Mayor de San Marcos", src: "/images/logos/unmsm.svg" },
+    { name: "Universidad de Lima", src: "/images/logos/ulima.svg" },
+    { name: "Universidad Peruana Los Andes", src: "/images/logos/upla.png" },
+    { name: "Universidad Continental", src: "/images/logos/continental.svg" },
+    { name: "Cisco", src: "/images/logos/cisco.svg" },
+];
 ---
 
 <section class="hero">
@@ -142,8 +154,18 @@ const logos = Array.from({ length: 10 }, (_, index) => `Logo ${index + 1}`);
         <div class="hero-bottom" aria-label="Logos de participantes">
             <div class="hero-logo-marquee">
                 <div class="hero-logo-track">
-                    {[...logos, ...logos].map((logo) => (
-                        <div class="hero-logo-item" aria-hidden="true">{logo}</div>
+                    {[...logos, ...logos].map((logo, index) => (
+                        <div class="hero-logo-item" aria-hidden={index >= logos.length ? "true" : undefined}>
+                            <img
+                                class="hero-logo-image"
+                                src={logo.src}
+                                alt={index < logos.length ? logo.name : ""}
+                                width="160"
+                                height="40"
+                                loading="eager"
+                                draggable="false"
+                            />
+                        </div>
                     ))}
                 </div>
             </div>
