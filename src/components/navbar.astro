@@ -3,12 +3,36 @@ import "../styles/navbar.css";
 ---
 
 <nav class="navbar">
-    <div class="logo">LOGO</div>
+    <a class="logo" href="/" aria-label="Inicio">LOGO</a>
 
     <div class="nav-links">
-        <a href="#">Option</a>
-        <a href="#">Option</a>
-        <a href="#">Option</a>
-        <a href="#">Inscripciones</a>
+        <label class="nav-combobox">
+            <span class="sr-only">Primera opcion</span>
+            <select aria-label="Primera opcion">
+                <option>option</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+            </select>
+        </label>
+
+        <label class="nav-combobox">
+            <span class="sr-only">Segunda opcion</span>
+            <select aria-label="Segunda opcion">
+                <option>option</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+            </select>
+        </label>
+
+        <label class="nav-combobox">
+            <span class="sr-only">Tercera opcion</span>
+            <select aria-label="Tercera opcion">
+                <option>option</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+            </select>
+        </label>
     </div>
+
+    <a class="register-button" href="#">Registro</a>
 </nav>
