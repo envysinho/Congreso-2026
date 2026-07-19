@@ -87,6 +87,23 @@
     transform: translateX(-50%);
 }
 
+.hero-person-marker-name {
+    position: absolute;
+    top: -2.55rem;
+    left: 50%;
+    width: max-content;
+    max-width: 12rem;
+    margin: 0;
+    color: white;
+    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-align: center;
+    text-wrap: balance;
+    transform: translateX(-50%);
+}
+
 .hero-person-slide.is-prev .hero-person-marker::before,
 .hero-person-slide.is-next .hero-person-marker::before {
     top: -0.45rem;
@@ -94,6 +111,13 @@
     border-left-width: 0.58rem;
     border-top-width: 0.74rem;
     filter: drop-shadow(0 0.28rem 0.28rem rgba(0, 0, 0, 0.2));
+}
+
+.hero-person-slide.is-prev .hero-person-marker-name,
+.hero-person-slide.is-next .hero-person-marker-name {
+    top: -2rem;
+    max-width: 10rem;
+    font-size: clamp(0.78rem, 1.1vw, 0.9rem);
 }
 
 .hero-person-slides {
@@ -175,19 +199,19 @@
     text-align: center;
 }
 
-.hero-person-name,
-.hero-person-role {
+.hero-person-role,
+.hero-person-university {
     margin: 0;
     letter-spacing: 0;
 }
 
-.hero-person-name {
+.hero-person-role {
     font-size: clamp(1.2rem, 2.2vw, 1.85rem);
     line-height: 1;
     font-weight: 700;
 }
 
-.hero-person-role {
+.hero-person-university {
     color: rgba(255, 255, 255, 0.76);
     font-size: clamp(0.9rem, 1.4vw, 1.1rem);
     line-height: 1.2;
