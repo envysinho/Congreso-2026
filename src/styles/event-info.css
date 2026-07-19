@@ -1,12 +1,13 @@
 .event-info {
     min-height: 32rem;
-    padding: clamp(4rem, 8vw, 7rem) 1.25rem;
-    box-sizing: border-box;
+    width: min(100%, var(--page-max-width));
+    margin-inline: auto;
+    padding: clamp(4rem, 8vw, 7rem) var(--page-gutter);
     font-family: "SF Pro Text", sans-serif;
 }
 
 .event-info-content {
-    width: min(100%, 72rem);
+    width: 100%;
     min-height: 20rem;
     margin: 0 auto;
 }

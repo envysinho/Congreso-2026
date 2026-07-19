@@ -1,5 +1,16 @@
+:root {
+    --page-gutter: clamp(1.25rem, 6vw, 6rem);
+    --page-max-width: 90rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    overflow-x: clip;
     background: black;
-    color : white;
+    color: white;
+    font-family: "SF Pro Text", sans-serif;
 }
