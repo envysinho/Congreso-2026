@@ -83,6 +83,10 @@ const people = [
 
         <div class="hero-right" data-hero-people-slider aria-label="Contenido destacado" tabindex="0">
             <div class="hero-person-slides">
+                <div class="hero-person-marker is-prev" aria-hidden="true"></div>
+                <div class="hero-person-marker is-active" aria-hidden="true"></div>
+                <div class="hero-person-marker is-next" aria-hidden="true"></div>
+
                 {
                     people.map((person, index) => (
                         <article
