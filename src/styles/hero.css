@@ -26,10 +26,13 @@
 }
 
 .hero-right {
+    --hero-right-inline-padding: 0rem;
     position: relative;
     min-height: 18rem;
     display: grid;
     place-items: center;
+    padding-bottom: 2.25rem;
+    box-sizing: border-box;
     overflow: hidden;
     perspective: 900px;
 }
@@ -83,15 +86,24 @@
 .hero-person-slide.is-prev,
 .hero-person-slide.is-next {
     z-index: 2;
-    opacity: 0.52;
+    opacity: 0.44;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.hero-person-slide.is-prev:hover,
+.hero-person-slide.is-next:hover,
+.hero-person-slide.is-prev:focus-visible,
+.hero-person-slide.is-next:focus-visible {
+    opacity: 0.68;
 }
 
 .hero-person-slide.is-prev {
-    transform: translate3d(-38%, 1.75rem, -8rem) rotateY(26deg) scale(0.76);
+    transform: translate3d(-43%, 2.05rem, -8rem) rotateY(28deg) scale(0.77);
 }
 
 .hero-person-slide.is-next {
-    transform: translate3d(38%, 1.75rem, -8rem) rotateY(-26deg) scale(0.76);
+    transform: translate3d(43%, 2.05rem, -8rem) rotateY(-28deg) scale(0.77);
 }
 
 .hero-person-image {
@@ -133,31 +145,58 @@
     font-weight: 300;
 }
 
-.hero-slider-button {
+.hero-slider-dots {
     position: absolute;
     z-index: 4;
-    top: 50%;
-    width: 2.75rem;
-    height: 2.75rem;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.24);
+    right: 0;
+    bottom: 0.6rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0 1rem;
+}
+
+.hero-slider-dot {
+    position: relative;
+    width: 1.35rem;
+    height: 1.35rem;
+    padding: 0;
+    border: 0;
     border-radius: 999px;
-    color: white;
-    background: rgba(0, 0, 0, 0.42);
-    font: inherit;
-    font-size: 2rem;
-    line-height: 1;
+    background: transparent;
     cursor: pointer;
-    transform: translateY(-50%);
+    appearance: none;
 }
 
-.hero-slider-button-prev {
-    left: clamp(0.75rem, 2vw, 1.5rem);
+.hero-slider-dot::before {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.34);
+    transform: translate(-50%, -50%);
+    transition:
+        width 220ms ease,
+        background-color 220ms ease,
+        opacity 220ms ease;
 }
 
-.hero-slider-button-next {
-    right: clamp(0.75rem, 2vw, 1.5rem);
+.hero-slider-dot:hover::before,
+.hero-slider-dot:focus-visible::before {
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.hero-slider-dot.is-active::before {
+    width: 1.35rem;
+    background: white;
+}
+
+.hero-slider-dot:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 4px;
 }
 
 @media (min-width: 768px) {
@@ -180,9 +219,18 @@
     }
 
     .hero-right {
-        padding-right: clamp(3rem, 6vw, 6rem);
-        padding-left: clamp(2rem, 4vw, 4rem);
+        --hero-right-inline-padding: clamp(2.5rem, 5vw, 5rem);
+        place-items: center start;
+        padding-right: var(--hero-right-inline-padding);
+        padding-left: var(--hero-right-inline-padding);
         box-sizing: border-box;
+    }
+
+    .hero-slider-dots {
+        right: auto;
+        left: var(--hero-right-inline-padding);
+        width: min(calc(100% - var(--hero-right-inline-padding) - var(--hero-right-inline-padding)), 34rem);
+        padding: 0;
     }
 }
 
@@ -193,16 +241,14 @@
     }
 
     .hero-person-slide.is-prev {
-        transform: translate3d(-32%, 1.25rem, -8rem) rotateY(24deg) scale(0.72);
+        transform: translate3d(-36%, 1.45rem, -8rem) rotateY(25deg) scale(0.73);
     }
 
     .hero-person-slide.is-next {
-        transform: translate3d(32%, 1.25rem, -8rem) rotateY(-24deg) scale(0.72);
+        transform: translate3d(36%, 1.45rem, -8rem) rotateY(-25deg) scale(0.73);
     }
 
-    .hero-slider-button {
-        width: 2.4rem;
-        height: 2.4rem;
-        font-size: 1.7rem;
+    .hero-slider-dots {
+        bottom: 0.3rem;
     }
 }

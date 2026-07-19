@@ -81,11 +81,7 @@ const people = [
     <div class="hero-content">
         <div class="hero-left"></div>
 
-        <div class="hero-right" data-hero-people-slider aria-label="Contenido destacado">
-            <button class="hero-slider-button hero-slider-button-prev" data-hero-slider-prev type="button" aria-label="Persona anterior">
-                &lsaquo;
-            </button>
-
+        <div class="hero-right" data-hero-people-slider aria-label="Contenido destacado" tabindex="0">
             <div class="hero-person-slides">
                 {
                     people.map((person, index) => (
@@ -110,9 +106,20 @@ const people = [
                 }
             </div>
 
-            <button class="hero-slider-button hero-slider-button-next" data-hero-slider-next type="button" aria-label="Persona siguiente">
-                &rsaquo;
-            </button>
+            <div class="hero-slider-dots" aria-label="Seleccionar persona destacada">
+                {
+                    people.map((person, index) => (
+                        <button
+                            class={`hero-slider-dot${index === 0 ? " is-active" : ""}`}
+                            data-hero-slider-dot
+                            data-hero-slider-index={index}
+                            type="button"
+                            aria-label={`Mostrar a ${person.name}`}
+                            aria-current={index === 0 ? "true" : "false"}
+                        />
+                    ))
+                }
+            </div>
         </div>
     </div>
 </section>

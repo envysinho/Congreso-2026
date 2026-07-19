@@ -2,9 +2,13 @@ const sliders = document.querySelectorAll("[data-hero-people-slider]");
 
 sliders.forEach((slider) => {
     const slides = Array.from(slider.querySelectorAll("[data-hero-person-slide]"));
-    const prevButton = slider.querySelector("[data-hero-slider-prev]");
-    const nextButton = slider.querySelector("[data-hero-slider-next]");
+    const dots = Array.from(slider.querySelectorAll("[data-hero-slider-dot]"));
     let activeIndex = 0;
+    let isPointerInside = false;
+
+    if (slides.length === 0) {
+        return;
+    }
 
     const setActiveSlide = (nextIndex) => {
         activeIndex = (nextIndex + slides.length) % slides.length;
@@ -21,8 +25,60 @@ sliders.forEach((slider) => {
             slide.classList.toggle("is-next", isNext);
             slide.setAttribute("aria-hidden", String(!isActive));
         });
+
+        dots.forEach((dot, index) => {
+            const isActive = index === activeIndex;
+
+            dot.classList.toggle("is-active", isActive);
+            dot.setAttribute("aria-current", String(isActive));
+        });
     };
 
-    prevButton?.addEventListener("click", () => setActiveSlide(activeIndex - 1));
-    nextButton?.addEventListener("click", () => setActiveSlide(activeIndex + 1));
+    slides.forEach((slide) => {
+        slide.addEventListener("click", () => {
+            if (slide.classList.contains("is-prev")) {
+                setActiveSlide(activeIndex - 1);
+            }
+
+            if (slide.classList.contains("is-next")) {
+                setActiveSlide(activeIndex + 1);
+            }
+        });
+    });
+
+    dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+            const nextIndex = Number(dot.dataset.heroSliderIndex);
+
+            if (Number.isInteger(nextIndex)) {
+                setActiveSlide(nextIndex);
+            }
+        });
+    });
+
+    slider.addEventListener("pointerenter", () => {
+        isPointerInside = true;
+    });
+
+    slider.addEventListener("pointerleave", () => {
+        isPointerInside = false;
+    });
+
+    document.addEventListener("keydown", (event) => {
+        const isSliderFocused = slider.contains(document.activeElement);
+
+        if (!isPointerInside && !isSliderFocused) {
+            return;
+        }
+
+        if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            setActiveSlide(activeIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
+            setActiveSlide(activeIndex + 1);
+        }
+    });
 });
