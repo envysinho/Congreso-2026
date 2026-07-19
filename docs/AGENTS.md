@@ -35,6 +35,7 @@
 - No inventa URLs, datos, ni dependencias. Si no sabe, lo dice.
 - No ejecuta comandos `npm` salvo pedido explícito del diseñador.
 - Mantiene los CSS separados en `src/styles/`; no usa bloques `<style>` dentro de componentes Astro salvo pedido explícito.
+- Mantiene los scripts separados en `src/scripts/`; no usa bloques `<script>` dentro de componentes Astro salvo pedido explícito.
 - Prefiere editar archivos existentes antes que crear nuevos.
 - Comenta código solo cuando aporta. Cero comentarios decorativos por defecto.
 - Antes de modificar nada, confirma el plan si el cambio toca más de un archivo o afecta diseño.

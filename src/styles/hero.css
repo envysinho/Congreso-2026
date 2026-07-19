@@ -30,9 +30,11 @@
     min-height: 18rem;
     display: grid;
     place-items: center;
+    overflow: hidden;
+    perspective: 900px;
 }
 
-.hero-right::after {
+.hero-person-slide::after {
     content: "";
     position: absolute;
     z-index: 2;
@@ -42,6 +44,54 @@
     height: 8rem;
     pointer-events: none;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0), #000 82%);
+}
+
+.hero-person-slides {
+    position: relative;
+    width: min(100%, 34rem);
+    min-height: 39rem;
+    transform-style: preserve-3d;
+}
+
+.hero-person-slide {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(0, 0, -8rem) scale(0.72);
+    transform-origin: center bottom;
+    transition:
+        opacity 360ms ease,
+        transform 360ms ease,
+        filter 360ms ease;
+    filter: saturate(0.7) brightness(0.76);
+}
+
+.hero-person-slide.is-active {
+    z-index: 3;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+    filter: saturate(1) brightness(1);
+}
+
+.hero-person-slide.is-prev,
+.hero-person-slide.is-next {
+    z-index: 2;
+    opacity: 0.52;
+}
+
+.hero-person-slide.is-prev {
+    transform: translate3d(-38%, 1.75rem, -8rem) rotateY(26deg) scale(0.76);
+}
+
+.hero-person-slide.is-next {
+    transform: translate3d(38%, 1.75rem, -8rem) rotateY(-26deg) scale(0.76);
 }
 
 .hero-person-image {
@@ -83,6 +133,33 @@
     font-weight: 300;
 }
 
+.hero-slider-button {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    color: white;
+    background: rgba(0, 0, 0, 0.42);
+    font: inherit;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.hero-slider-button-prev {
+    left: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.hero-slider-button-next {
+    right: clamp(0.75rem, 2vw, 1.5rem);
+}
+
 @media (min-width: 768px) {
     .hero {
         padding-right: 0;
@@ -106,5 +183,26 @@
         padding-right: clamp(3rem, 6vw, 6rem);
         padding-left: clamp(2rem, 4vw, 4rem);
         box-sizing: border-box;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-person-slides {
+        min-height: 31rem;
+        width: min(100%, 25rem);
+    }
+
+    .hero-person-slide.is-prev {
+        transform: translate3d(-32%, 1.25rem, -8rem) rotateY(24deg) scale(0.72);
+    }
+
+    .hero-person-slide.is-next {
+        transform: translate3d(32%, 1.25rem, -8rem) rotateY(-24deg) scale(0.72);
+    }
+
+    .hero-slider-button {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1.7rem;
     }
 }

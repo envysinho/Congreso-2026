@@ -1,23 +1,118 @@
 ---
 import heroPerson from "../assets/images/png-persona.png";
+
+const people = [
+    {
+        name: "Jhon Smith",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Jhon Smith",
+    },
+    {
+        name: "Maria Torres",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Maria Torres",
+    },
+    {
+        name: "Carlos Rivera",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Carlos Rivera",
+    },
+    {
+        name: "Ana Mendoza",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Ana Mendoza",
+    },
+    {
+        name: "Luis Herrera",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Luis Herrera",
+    },
+    {
+        name: "Sofia Ramirez",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Sofia Ramirez",
+    },
+    {
+        name: "Diego Castillo",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Diego Castillo",
+    },
+    {
+        name: "Valeria Flores",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Valeria Flores",
+    },
+    {
+        name: "Mateo Vargas",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Mateo Vargas",
+    },
+    {
+        name: "Camila Rojas",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Camila Rojas",
+    },
+    {
+        name: "Andres Silva",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Andres Silva",
+    },
+    {
+        name: "Lucia Navarro",
+        role: "Ingeniero de Sistemas",
+        image: heroPerson,
+        alt: "Profesional de ingeniería destacado: Lucia Navarro",
+    },
+];
 ---
 
 <section class="hero">
     <div class="hero-content">
         <div class="hero-left"></div>
 
-        <div class="hero-right" aria-label="Contenido destacado">
-            <img
-                class="hero-person-image"
-                src={heroPerson.src}
-                width={heroPerson.width}
-                height={heroPerson.height}
-                alt="Profesional de ingeniería destacado"
-            />
-            <div class="hero-person-info">
-                <p class="hero-person-name">Jhon Smith</p>
-                <p class="hero-person-role">Ingeniero de Sistemas</p>
+        <div class="hero-right" data-hero-people-slider aria-label="Contenido destacado">
+            <button class="hero-slider-button hero-slider-button-prev" data-hero-slider-prev type="button" aria-label="Persona anterior">
+                &lsaquo;
+            </button>
+
+            <div class="hero-person-slides">
+                {
+                    people.map((person, index) => (
+                        <article
+                            class={`hero-person-slide${index === 0 ? " is-active" : index === 1 ? " is-next" : index === people.length - 1 ? " is-prev" : ""}`}
+                            data-hero-person-slide
+                            aria-hidden={index === 0 ? "false" : "true"}
+                        >
+                            <img
+                                class="hero-person-image"
+                                src={person.image.src}
+                                width={person.image.width}
+                                height={person.image.height}
+                                alt={person.alt}
+                            />
+                            <div class="hero-person-info">
+                                <p class="hero-person-name">{person.name}</p>
+                                <p class="hero-person-role">{person.role}</p>
+                            </div>
+                        </article>
+                    ))
+                }
             </div>
+
+            <button class="hero-slider-button hero-slider-button-next" data-hero-slider-next type="button" aria-label="Persona siguiente">
+                &rsaquo;
+            </button>
         </div>
     </div>
 </section>

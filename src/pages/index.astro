@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import "../styles/fonts.css";
 import "../styles/hero.css";
+import heroSliderScript from "../scripts/hero-slider.js?url";
 import Navbar from "../components/navbar.astro";
 import Hero from "../components/hero.astro";
 ---
@@ -18,6 +19,7 @@ import Hero from "../components/hero.astro";
 	<body>
 		<Navbar />
 		<Hero />
+		<script type="module" src={heroSliderScript}></script>
 	</body>
 </html>
 	
