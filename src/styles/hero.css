@@ -1,0 +1,110 @@
+.hero {
+    min-height: calc(100vh - 80px);
+    display: grid;
+    place-items: center;
+    padding: 4rem 1.25rem;
+    box-sizing: border-box;
+    font-family: "SF Pro Text", sans-serif;
+}
+
+.hero-content {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-left {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+.hero-left,
+.hero-right {
+    min-width: 0;
+}
+
+.hero-right {
+    position: relative;
+    min-height: 18rem;
+    display: grid;
+    place-items: center;
+}
+
+.hero-right::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 8rem;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), #000 82%);
+}
+
+.hero-person-image {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 28rem);
+    height: auto;
+    filter: drop-shadow(0 1.5rem 1.75rem rgba(0, 0, 0, 0.35));
+}
+
+.hero-person-info {
+    position: absolute;
+    z-index: 3;
+    right: clamp(1rem, 5vw, 5rem);
+    bottom: 1.75rem;
+    left: clamp(1rem, 5vw, 5rem);
+    display: grid;
+    gap: 0.35rem;
+    color: white;
+    text-align: center;
+}
+
+.hero-person-name,
+.hero-person-role {
+    margin: 0;
+    letter-spacing: 0;
+}
+
+.hero-person-name {
+    font-size: clamp(1.2rem, 2.2vw, 1.85rem);
+    line-height: 1;
+    font-weight: 700;
+}
+
+.hero-person-role {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .hero-left {
+        align-self: stretch;
+        align-content: center;
+        padding-left: clamp(3rem, 6vw, 6rem);
+        padding-right: clamp(2rem, 4vw, 4rem);
+        box-sizing: border-box;
+    }
+
+    .hero-right {
+        padding-right: clamp(3rem, 6vw, 6rem);
+        padding-left: clamp(2rem, 4vw, 4rem);
+        box-sizing: border-box;
+    }
+}
