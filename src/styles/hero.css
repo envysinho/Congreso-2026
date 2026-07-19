@@ -70,7 +70,6 @@
     position: absolute;
     z-index: 4;
     inset: 0;
-    transform-origin: center bottom;
     pointer-events: none;
 }
 
@@ -88,31 +87,13 @@
     transform: translateX(-50%);
 }
 
-.hero-person-marker.is-active {
-    transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
-}
-
-.hero-person-marker.is-prev,
-.hero-person-marker.is-next {
-    z-index: 3;
-    opacity: 0.78;
-}
-
-.hero-person-marker.is-prev::before,
-.hero-person-marker.is-next::before {
+.hero-person-slide.is-prev .hero-person-marker::before,
+.hero-person-slide.is-next .hero-person-marker::before {
     top: -0.45rem;
     border-right-width: 0.58rem;
     border-left-width: 0.58rem;
     border-top-width: 0.74rem;
     filter: drop-shadow(0 0.28rem 0.28rem rgba(0, 0, 0, 0.2));
-}
-
-.hero-person-marker.is-prev {
-    transform: translate3d(-43%, 2.05rem, -8rem) rotateY(28deg) scale(0.77);
-}
-
-.hero-person-marker.is-next {
-    transform: translate3d(43%, 2.05rem, -8rem) rotateY(-28deg) scale(0.77);
 }
 
 .hero-person-slides {
@@ -362,14 +343,6 @@
     }
 
     .hero-person-slide.is-next {
-        transform: translate3d(36%, 1.45rem, -8rem) rotateY(-25deg) scale(0.73);
-    }
-
-    .hero-person-marker.is-prev {
-        transform: translate3d(-36%, 1.45rem, -8rem) rotateY(25deg) scale(0.73);
-    }
-
-    .hero-person-marker.is-next {
         transform: translate3d(36%, 1.45rem, -8rem) rotateY(-25deg) scale(0.73);
     }
 
