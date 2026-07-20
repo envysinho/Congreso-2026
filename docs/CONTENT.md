@@ -25,9 +25,9 @@ La referencia inicial es la pagina del ano anterior:
 
 | Campo | Estado | Contenido |
 | ----- | ------ | --------- |
-| Nombre corto | Pendiente | A definir. Referencia anterior: `VII CIISIC`. |
+| Nombre corto | Confirmado | `VIII CIISIC`. Confirmado el 2026-07-19. |
 | Nombre completo | Pendiente | A definir. Referencia anterior: `VII Congreso Internacional de Ingenieria de Sistemas e Investigacion Cientifica`. |
-| Edicion | Pendiente | A definir. |
+| Edicion | Confirmado | VIII. Confirmada el 2026-07-19. |
 | Ano | Pendiente | A definir. |
 | Organizador principal | Pendiente | A definir. Referencia anterior: Facultad de Ingenieria - UNDC. |
 | Unidad academica | Pendiente | A definir. |

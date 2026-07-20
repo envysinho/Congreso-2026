@@ -1,9 +1,21 @@
 ---
+import ciisicSymbol from "../assets/images/ciisic-symbol.png";
 import "../styles/navbar.css";
 ---
 
 <nav class="navbar">
-    <a class="logo" href="/" aria-label="Inicio">LOGO</a>
+    <a class="logo" href="/" aria-label="Ir al inicio">
+        <img
+            class="navbar-logo"
+            src={ciisicSymbol.src}
+            width={ciisicSymbol.width}
+            height={ciisicSymbol.height}
+            alt=""
+            loading="eager"
+            decoding="async"
+        />
+        <span class="navbar-wordmark">VIII CIISIC</span>
+    </a>
 
     <div class="nav-links">
         <label class="nav-combobox">
