@@ -22,7 +22,8 @@
 
 > Tokens en CSS (variables), nunca hex hardcodeados en componentes.
 
-- **Primario:** azul eléctrico oscuro. Tono exacto a afinar.
+- **Primario provisional (2026-07-19):** azul eléctrico `#3B82F6`, usado en marca, títulos destacados y CTA. Debe sustituirse por el azul institucional oficial cuando sea confirmado.
+- **Estado activo:** verde `#22C55E`, reservado para selección de ponentes, indicadores activos y estados positivos.
 - **Secundario:** a definir.
 - **Semánticos:** éxito, advertencia, error, info — a definir.
 - **Neutros:** escala de grises a definir.

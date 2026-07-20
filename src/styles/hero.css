@@ -1,4 +1,8 @@
 .hero {
+    --hero-accent: var(--color-brand-primary);
+    --hero-border: rgba(255, 255, 255, 0.16);
+    --hero-text-muted: rgba(255, 255, 255, 0.68);
+
     min-height: calc(100vh - 80px);
     display: grid;
     place-items: stretch center;
@@ -21,6 +25,187 @@
     display: grid;
     justify-items: center;
     text-align: center;
+}
+
+.hero-intro {
+    display: grid;
+    justify-items: center;
+    width: min(100%, 40rem);
+}
+
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0 0 1.35rem;
+    color: var(--hero-accent);
+    font-family: "Silkscreen", monospace;
+    font-size: clamp(0.72rem, 1.2vw, 0.86rem);
+    line-height: 1.2;
+    letter-spacing: 0.055em;
+}
+
+.hero-kicker-status,
+.hero-update-status span {
+    width: 0.48rem;
+    height: 0.48rem;
+    flex: 0 0 auto;
+    background: var(--hero-accent);
+    box-shadow: 0 0 0.75rem rgb(var(--color-brand-primary-rgb) / 0.9);
+}
+
+.hero-title {
+    max-width: 12ch;
+    margin: 0;
+    font-size: clamp(2.75rem, 6.7vw, 6.2rem);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+    text-wrap: balance;
+}
+
+.hero-title span {
+    display: block;
+    color: var(--hero-accent);
+}
+
+.hero-event-name {
+    max-width: 38rem;
+    margin: 1.65rem 0 0;
+    color: white;
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    line-height: 1.45;
+    font-weight: 650;
+    text-wrap: balance;
+}
+
+.hero-summary {
+    max-width: 34rem;
+    margin: 0.85rem 0 0;
+    color: var(--hero-text-muted);
+    font-size: clamp(0.94rem, 1.4vw, 1.05rem);
+    line-height: 1.55;
+    text-wrap: balance;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.15rem;
+    border: 1px solid transparent;
+    border-radius: 0.65rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.hero-cta-primary {
+    border-color: rgb(var(--color-brand-primary-rgb) / 0.72);
+    background: rgb(var(--color-brand-primary-rgb) / 0.1);
+    color: white;
+}
+
+.hero-cta-primary::before {
+    content: "";
+    width: 0.38rem;
+    height: 0.38rem;
+    flex: 0 0 auto;
+    background: var(--hero-accent);
+    box-shadow: 0 0 0.5rem rgb(var(--color-brand-primary-rgb) / 0.8);
+}
+
+.hero-cta-secondary {
+    border-color: var(--hero-border);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.hero-cta:hover {
+    transform: translateY(-2px);
+}
+
+.hero-cta-primary:hover {
+    border-color: var(--hero-accent);
+    background: rgb(var(--color-brand-primary-rgb) / 0.18);
+    box-shadow: 0 0 1.15rem rgb(var(--color-brand-primary-rgb) / 0.18);
+}
+
+.hero-cta-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-cta:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+.hero-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 26rem);
+    margin: 1.75rem 0 0;
+    border-top: 1px solid var(--hero-border);
+    border-bottom: 1px solid var(--hero-border);
+}
+
+.hero-meta-item {
+    display: grid;
+    gap: 0.3rem;
+    padding: 0.85rem 1rem;
+}
+
+.hero-meta-item + .hero-meta-item {
+    border-left: 1px solid var(--hero-border);
+}
+
+.hero-meta dt,
+.hero-meta dd {
+    margin: 0;
+}
+
+.hero-meta dt {
+    color: var(--hero-text-muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-meta dd {
+    font-size: 0.88rem;
+    font-weight: 650;
+}
+
+.hero-update-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0.85rem 0 0;
+    color: var(--hero-text-muted);
+    font-size: 0.76rem;
+}
+
+.hero-update-status span {
+    width: 0.34rem;
+    height: 0.34rem;
+    animation: hero-status-pulse 1.8s ease-in-out infinite;
 }
 
 .hero-left,
@@ -87,7 +272,7 @@
     height: 0;
     border-right: 0.7rem solid transparent;
     border-left: 0.7rem solid transparent;
-    border-top: 0.9rem solid #22c55e;
+    border-top: 0.9rem solid var(--color-state-active);
     filter: drop-shadow(0 0.35rem 0.35rem rgba(0, 0, 0, 0.24));
     transform: translateX(-50%);
 }
@@ -113,8 +298,8 @@
 .hero-person-slide.is-active .hero-person-marker::before {
     filter:
         drop-shadow(0 0.35rem 0.35rem rgba(0, 0, 0, 0.24))
-        drop-shadow(0 0 0.45rem rgba(34, 197, 94, 0.95))
-        drop-shadow(0 0 0.85rem rgba(34, 197, 94, 0.55));
+        drop-shadow(0 0 0.45rem rgb(var(--color-state-active-rgb) / 0.95))
+        drop-shadow(0 0 0.85rem rgb(var(--color-state-active-rgb) / 0.55));
 }
 
 .hero-person-slide.is-active .hero-person-marker-label {
@@ -239,8 +424,8 @@
 
 .hero-person-name::before,
 .hero-person-name::after {
-    color: #22c55e;
-    text-shadow: 0 0 0.55rem rgba(34, 197, 94, 0.7);
+    color: var(--color-state-active);
+    text-shadow: 0 0 0.55rem rgb(var(--color-state-active-rgb) / 0.7);
 }
 
 .hero-person-name::before {
@@ -309,10 +494,10 @@
 .hero-slider-dot.is-active::before {
     width: 1rem;
     height: 0.45rem;
-    background: #22c55e;
+    background: var(--color-state-active);
     box-shadow:
-        0 0 0.35rem rgba(34, 197, 94, 0.85),
-        0 0 0.7rem rgba(34, 197, 94, 0.45);
+        0 0 0.35rem rgb(var(--color-state-active-rgb) / 0.85),
+        0 0 0.7rem rgb(var(--color-state-active-rgb) / 0.45);
 }
 
 .hero-slider-dot:focus-visible {
@@ -384,9 +569,25 @@
     }
 }
 
+@keyframes hero-status-pulse {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .hero-person-slide.is-active .hero-person-marker {
+    .hero-person-slide.is-active .hero-person-marker,
+    .hero-update-status span {
         animation: none;
+    }
+
+    .hero-cta {
+        transition: none;
     }
 }
 
@@ -399,7 +600,17 @@
     .hero-left {
         align-self: stretch;
         align-content: center;
+        justify-items: start;
         padding-right: clamp(2rem, 4vw, 4rem);
+        text-align: left;
+    }
+
+    .hero-intro {
+        justify-items: start;
+    }
+
+    .hero-actions {
+        justify-content: flex-start;
     }
 
     .hero-right {

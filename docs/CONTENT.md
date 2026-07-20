@@ -83,6 +83,8 @@ La navegacion base toma como referencia la pagina anterior, pero se ajustara cua
 | Visual principal | Pendiente | Foto real, collage, video corto o imagen institucional. |
 | Contador | Pendiente | Solo si existe fecha confirmada. |
 
+**Implementación provisional (2026-07-19):** el hero presenta el concepto editorial `El futuro no se espera. Se diseña.` y mantiene el nombre completo del congreso como descriptor institucional. Los CTA apuntan a secciones internas mientras no exista un enlace oficial de registro. Fecha y sede se comunican explícitamente como pendientes; no se muestra contador hasta contar con una fecha confirmada.
+
 ### Acerca del Congreso
 
 | Elemento | Estado | Contenido |
@@ -231,4 +233,4 @@ El congreso reune a estudiantes, docentes, investigadores y profesionales para p
 
 ---
 
-Ultima actualizacion: 2026-07-18
+Ultima actualizacion: 2026-07-19

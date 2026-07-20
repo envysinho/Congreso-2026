@@ -1,6 +1,10 @@
 :root {
     --page-gutter: clamp(1.25rem, 6vw, 6rem);
     --page-max-width: 90rem;
+    --color-brand-primary: #3b82f6;
+    --color-brand-primary-rgb: 59 130 246;
+    --color-state-active: #22c55e;
+    --color-state-active-rgb: 34 197 94;
 }
 
 * {

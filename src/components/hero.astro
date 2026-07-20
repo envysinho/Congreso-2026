@@ -105,9 +105,53 @@ const logos = [
 
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-left"></div>
+        <div class="hero-left">
+            <div class="hero-intro">
+                <p class="hero-kicker">
+                    <span class="hero-kicker-status" aria-hidden="true"></span>
+                    CIISIC · VIII EDICIÓN
+                </p>
 
-        <div class="hero-right" data-hero-people-slider aria-label="Contenido destacado" tabindex="0">
+                <h1 class="hero-title">
+                    El futuro no se espera.
+                    <span>Se diseña.</span>
+                </h1>
+
+                <p class="hero-event-name">
+                    Congreso Internacional de Ingeniería de Sistemas e Investigación Científica
+                </p>
+
+                <p class="hero-summary">
+                    Un encuentro para convertir investigación, tecnología e innovación en soluciones con impacto real.
+                </p>
+
+                <div class="hero-actions" aria-label="Acciones principales">
+                    <a class="hero-cta hero-cta-primary" href="#informacion">
+                        Quiero participar
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <a class="hero-cta hero-cta-secondary" href="#ponentes">Explorar ponentes</a>
+                </div>
+
+                <dl class="hero-meta" aria-label="Datos del evento">
+                    <div class="hero-meta-item">
+                        <dt>Fecha</dt>
+                        <dd>Próximamente</dd>
+                    </div>
+                    <div class="hero-meta-item">
+                        <dt>Sede</dt>
+                        <dd>Por confirmar</dd>
+                    </div>
+                </dl>
+
+                <p class="hero-update-status">
+                    <span aria-hidden="true"></span>
+                    Información oficial en preparación
+                </p>
+            </div>
+        </div>
+
+        <div id="ponentes" class="hero-right" data-hero-people-slider aria-label="Contenido destacado" tabindex="0">
             <div class="hero-person-slides">
                 {
                     people.map((person, index) => (
